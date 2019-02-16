@@ -506,9 +506,10 @@ RCT_EXPORT_METHOD(setIndoorActiveLevelIndex:(nonnull NSNumber *)reactTag
       if (!self.map.indoorDisplay) {
         return;
       }
-      if ( levelIndex < [self.map.indoorDisplay.activeBuilding.levels count]) {
-        mapView.indoorDisplay.activeLevel = self.map.indoorDisplay.activeBuilding.levels[levelIndex];
-      }
+      // HOT FIX
+      mapView.indoorDisplay.activeLevel = self.map.indoorDisplay.activeBuilding.levels[levelIndex];
+      // if ( levelIndex < [self.map.indoorDisplay.activeBuilding.levels count]) {
+      // }
     }
   }];
  }
